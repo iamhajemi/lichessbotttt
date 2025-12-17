@@ -1,4 +1,4 @@
-token: "lip_ZC5zOghh39gkS8NvIwzC"         # Lichess OAuth2 Token.
+token: "xxxxxxxxxxxxxxxxxxxxxx"         # Lichess OAuth2 Token.
 
 engines:
   standard:                               # Engine used for standard chess and when no suitable special engine is configured.
