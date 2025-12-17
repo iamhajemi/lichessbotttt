@@ -1,15 +1,15 @@
-token: "lip_wdomq7ptBAAMD0fkmwOP"         # Lichess OAuth2 Token.
+token: "lip_ZC5zOghh39gkS8NvIwzC"         # Lichess OAuth2 Token.
 
 engines:
   standard:                               # Engine used for standard chess and when no suitable special engine is configured.
     dir: "./engines"                      # Directory containing the engine.
-    name: "stockfish_25120311_x64_avx2"             # Binary name of the engine to use.
+    name: "stockfish"             # Binary name of the engine to use.
     ponder: true                          # Think on opponent's time.
     silence_stderr: false                 # Suppresses stderr output.
     move_overhead_multiplier: 1.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine.
-      Threads: 16                          # Max CPU threads the engine can use.
-      Hash: 2048                           # Max memory (in megabytes) the engine can allocate.
+      Threads: 2                          # Max CPU threads the engine can use.
+      Hash: 128                           # Max memory (in megabytes) the engine can allocate.
       Move Overhead: 100                  # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
 #     time: 5.0                           # Max time per move in seconds.
@@ -36,7 +36,7 @@ engines:
 
 syzygy:
   standard:
-    enabled: true                        # Activate local syzygy endgame tablebases.
+    enabled: false                        # Activate local syzygy endgame tablebases.
     paths:                                # Paths to local syzygy endgame tablebases.
       - "./engines/3-4-5"
     max_pieces: 5                         # Count of max pieces in the local syzygy endgame tablebases.
@@ -61,7 +61,7 @@ gaviota:
   max_pieces: 5                           # Count of max pieces in the local gaviota endgame tablebases.
 
 opening_books:
-  enabled: true                          # Activate opening books.
+  enabled: false                          # Activate opening books.
   priority: 400                           # Priority with which this move source is used. Higher priority is used first.
   books:
 #   bullet:
