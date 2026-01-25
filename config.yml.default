@@ -76,6 +76,7 @@ opening_books:
     standard:
       selection: weighted_random          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
 #     max_depth: 16                       # Half move max depth. (Comment this line for max depth)
+#     max_moves: 1                        # Max number of moves played from opening books. (Comment this line for max moves)
 #     allow_repetitions: false            # Whether the book can create repetitions on the board. Can lead to unintentional draws.
       names:                              # List of names of books to use if there is no specific book for the time control, white, black or chess960.
         - DefaultBook
@@ -89,7 +90,7 @@ online_moves:
     enabled: false                        # Activate online moves from Lichess opening explorer. The move that has performed best for this bot is played.
     priority: 300                         # Priority with which this move source is used. Higher priority is used first.
 #   player: Username                      # Specific player whose Lichess opening explorer should be used, or “masters” to use the masters database.
-    only_without_book: false              # Whether the Lichess opening explorer should only be used if there is no matching book.
+    only_without_book: false              # Whether the Lichess opening explorer should only be used if there was no move from a book.
     use_for_variants: false               # Whether the Lichess opening explorer should be used for other variants than standard and chess960.
     allow_repetitions: false              # Whether the Lichess opening explorer can create repetitions on the board. Can lead to unintentional draws.
     min_time: 10                          # Time the bot must have at least to use the online move. +10 seconds in games without increment.
@@ -103,7 +104,7 @@ online_moves:
   lichess_cloud:
     enabled: false                        # Activate online moves from Lichess cloud eval.
     priority: 200                         # Priority with which this move source is used. Higher priority is used first.
-    only_without_book: false              # Whether the cloud should only be used if there is no matching book.
+    only_without_book: false              # Whether the cloud should only be used if there was no move from a book.
     use_for_variants: false               # Whether the cloud should be used for other variants than standard and chess960.
     allow_repetitions: false              # Whether the cloud can create repetitions on the board. Can lead to unintentional draws.
     trust_eval: false                     # Whether the cloud eval should be trusted for draw offers and resignations.
@@ -115,7 +116,7 @@ online_moves:
   chessdb:
     enabled: false                        # Activate online moves from https://chessdb.cn/queryc_en/
     priority: 100                         # Priority with which this move source is used. Higher priority is used first.
-    only_without_book: false              # Whether the chessdb should only be used if there is no matching book.
+    only_without_book: false              # Whether the chessdb should only be used if there was no move from a book.
     allow_repetitions: false              # Whether the chessdb can create repetitions on the board. Can lead to unintentional draws.
     trust_eval: false                     # Whether the chessdb eval should be trusted for draw offers and resignations.
     min_time: 10                          # Time the bot must have at least to use the online move. +10 seconds in games without increment.
@@ -182,7 +183,7 @@ challenge:                                # Incoming challenges.
 
 matchmaking:
   delay: 480                              # Time in seconds the bot must be idle before a new challenge is started.
-  timeout: 30                             # Time until a challenge is canceled.
+  timeout: 5                              # Time until a challenge is canceled.
   selection: weighted_random              # Matchmkaing type selection is one of "weighted_random", "sequential" or "cyclic".
   types:                                  # Matchmaking types of which one is selected before each game.
     blitz:                                # Arbitrary name of the matchmaking type. Names must be unique.
